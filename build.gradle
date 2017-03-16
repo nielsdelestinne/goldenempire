@@ -1,0 +1,41 @@
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.1.RELEASE'
+    }
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        dependencies {
+//            // SPRING
+//            Dependency 'org.springframework.boot:spring-boot-starter-web-services:1.5.2.RELEASE'
+//            Dependency 'org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE'
+//            Dependency 'org.springframework.boot:spring-boot-starter-data-jpa:1.5.2.RELEASE'
+//            // MYSQL
+//            Dependency 'mysql:mysql-connector-java:6.0.3'
+//            // RESTASSURED
+//            Dependency 'com.jayway.restassured:rest-assured:2.9.0'
+//            Dependency 'org.codehaus.groovy:groovy-all:2.4.7'
+        }
+    }
+
+    dependencies {
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+}

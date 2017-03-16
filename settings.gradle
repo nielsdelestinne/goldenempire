@@ -1,0 +1,9 @@
+rootProject.name = 'goldenempire'
+
+include 'goldenempire-api'
+include 'goldenempire-service'
+include 'goldenempire-domain'
+include 'goldenempire-infrastructure'
+include 'goldenempire-deploy'
+include 'goldenempire-ui'
+
