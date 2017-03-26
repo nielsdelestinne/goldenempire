@@ -9,6 +9,12 @@ buildscript {
     }
 }
 
+/**
+ * Heroku defined task
+ */
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 subprojects {
 
     apply plugin: 'java'
