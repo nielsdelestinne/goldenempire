@@ -1,24 +1,24 @@
-apply plugin: 'java'
+apply plugin: "java"
 
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.1.RELEASE'
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.1.RELEASE"
     }
 }
 
 /**
  * Heroku defined task
  */
-task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ["build", "clean"])
 build.mustRunAfter clean
 
 subprojects {
 
-    apply plugin: 'java'
-    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -30,19 +30,22 @@ subprojects {
     dependencyManagement {
         dependencies {
 //            // SPRING
-            dependency 'org.springframework.boot:spring-boot-starter:1.5.2.RELEASE'
-            dependency 'org.springframework.boot:spring-boot-starter-web-services:1.5.2.RELEASE'
-            dependency 'org.springframework.boot:spring-boot-starter-data-jpa:1.5.2.RELEASE'
-            dependency 'org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE'
+            dependency "org.springframework.boot:spring-boot-starter:1.5.2.RELEASE"
+            dependency "org.springframework.boot:spring-boot-starter-web-services:1.5.2.RELEASE"
+            dependency "org.springframework.boot:spring-boot-starter-data-jpa:1.5.2.RELEASE"
+            dependency "org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE"
 //            // MYSQL
-            dependency 'mysql:mysql-connector-java:6.0.6'
+            dependency "mysql:mysql-connector-java:6.0.6"
+            // POSTGRES
+            dependency "org.postgresql:postgresql:42.0.0"
+
 //            // RESTASSURED
-//            dependency 'com.jayway.restassured:rest-assured:2.9.0'
-//            dependency 'org.codehaus.groovy:groovy-all:2.4.7'
+//            dependency "com.jayway.restassured:rest-assured:2.9.0"
+//            dependency "org.codehaus.groovy:groovy-all:2.4.7"
         }
     }
 //
     dependencies {
-        testCompile 'org.springframework.boot:spring-boot-starter-test'
+        testCompile "org.springframework.boot:spring-boot-starter-test"
     }
 }

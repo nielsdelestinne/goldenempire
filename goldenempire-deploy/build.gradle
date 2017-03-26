@@ -30,4 +30,5 @@ dependencies {
 
     compile "org.springframework.boot:spring-boot-starter"
     compile "mysql:mysql-connector-java"
+    compile "org.postgresql:postgresql"
 }

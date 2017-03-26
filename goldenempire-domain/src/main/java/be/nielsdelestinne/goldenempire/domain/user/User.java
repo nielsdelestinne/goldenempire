@@ -7,7 +7,10 @@ import javax.persistence.*;
  */
 @Entity
 @Access(AccessType.FIELD)
+@Table(name = User.USER_TABLE_NAME)
 public class User {
+
+    public static final String USER_TABLE_NAME = "USER_APP";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
