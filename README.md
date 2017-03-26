@@ -24,6 +24,7 @@ Heroku (1 time setup)
 4. `heroku login`
 5. `heroku create --region eu` (to create an app (and postgres db))
 6. `git push heroku master` (push changes to heroku)
+7. Locally, run a postgresql database configured with the `application-dev.properties` properties
 
 References:
 
