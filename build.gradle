@@ -24,18 +24,19 @@ subprojects {
     dependencyManagement {
         dependencies {
 //            // SPRING
+            dependency 'org.springframework.boot:spring-boot-starter:1.5.2.RELEASE'
             dependency 'org.springframework.boot:spring-boot-starter-web-services:1.5.2.RELEASE'
-//            dependency 'org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE'
-//            dependency 'org.springframework.boot:spring-boot-starter-data-jpa:1.4.0.RELEASE'
+            dependency 'org.springframework.boot:spring-boot-starter-data-jpa:1.5.2.RELEASE'
+            dependency 'org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE'
 //            // MYSQL
-//            dependency 'mysql:mysql-connector-java:6.0.3'
+            dependency 'mysql:mysql-connector-java:6.0.6'
 //            // RESTASSURED
 //            dependency 'com.jayway.restassured:rest-assured:2.9.0'
 //            dependency 'org.codehaus.groovy:groovy-all:2.4.7'
         }
     }
 //
-//    dependencies {
-//        testCompile 'org.springframework.boot:spring-boot-starter-test'
-//    }
+    dependencies {
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
 }

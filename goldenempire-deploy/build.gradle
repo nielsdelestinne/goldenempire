@@ -1,1 +1,33 @@
+/**
+ * spring-boot plugin added so that the module can be
+ * executed and packaged as an executable jar.
+ */
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin: 'spring-boot'
+apply plugin: 'war'
 
+def starterBaseName = 'golden-empire'
+def starterVersion = '0.0.1-SNAPSHOT'
+
+war {
+    baseName = starterBaseName
+    version =  starterVersion
+}
+
+dependencies {
+    compile project(":goldenempire-infrastructure")
+    compile project(":goldenempire-api")
+    compile project(":goldenempire-service")
+    compile project(":goldenempire-domain")
+    compile project(":goldenempire-ui")
+
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "mysql:mysql-connector-java"
+}

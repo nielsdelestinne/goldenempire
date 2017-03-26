@@ -1,9 +1,9 @@
 dependencies {
-////    compile project(':goldenempire-service')
+        compile project(":goldenempire-service")
 ////    testCompile project(path: ':starter-infrastructure', configuration: 'tests')
 ////    testCompile project(path: ':starter-domain', configuration: 'tests')
 //
-        compile 'org.springframework.boot:spring-boot-starter-web-services'
+        compile "org.springframework.boot:spring-boot-starter-web-services"
 ////    compile ('com.jayway.restassured:rest-assured') {
 ////        exclude group: 'org.codehaus.groovy'
 ////    }
