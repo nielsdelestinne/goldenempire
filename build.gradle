@@ -9,12 +9,6 @@ buildscript {
     }
 }
 
-/**
- * Heroku defined task
- */
-task stage(dependsOn: ["build", "clean"])
-build.mustRunAfter clean
-
 subprojects {
 
     apply plugin: "java"
@@ -49,9 +43,4 @@ subprojects {
         testCompile "org.springframework.boot:spring-boot-starter-test"
     }
 
-    /**
-     * Heroku defined task
-     */
-    task stage(dependsOn: ["build", "clean"])
-    build.mustRunAfter clean
 }

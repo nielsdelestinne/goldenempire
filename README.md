@@ -19,7 +19,7 @@ Heroku (1 time setup)
 ---
 
 1. Install the Heroku CLI, validate with `heroku --version`
-2. Create gradle task `stage`
+2. Set the default task to build instead of stage: `heroku config:set GRADLE_TASK="build"`
 3. Create the `Procfile` file
 4. `heroku login`
 5. `heroku create --region eu` (to create an app (and postgres db))
