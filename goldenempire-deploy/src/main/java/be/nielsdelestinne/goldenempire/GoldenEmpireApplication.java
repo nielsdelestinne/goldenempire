@@ -1,7 +1,7 @@
 package be.nielsdelestinne.goldenempire;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * Created by Niels Delestinne: www.nielsdelestinne.be
@@ -9,8 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class GoldenEmpireApplication {
 
+    /**
+     * Runs on the Local development Environment
+     */
+
     public static void main(String[] args) {
-        SpringApplication.run(GoldenEmpireApplication.class, args);
+        new SpringApplicationBuilder(GoldenEmpireApplication.class)
+                .profiles("dev")
+                .run(args);
     }
 
 }
