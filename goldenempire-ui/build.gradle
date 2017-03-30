@@ -12,6 +12,7 @@ task packageUiForWar(type: Copy) {
   from file('dist') into project(':goldenempire-deploy').file('src/main/webapp')
 }
 
+build.dependsOn(npmInstall)
 build.dependsOn(npm_test)
 build.dependsOn(packageUiForWar)
 packageUiForWar.dependsOn(npm_build)
