@@ -17,6 +17,7 @@ Heroku
 - Upload to Heroku
     - Push changes to master from inside root: `git push heroku master`
      - Open web-app with `heroku open`
+- `heroku run bash` to see the files as they are on Heroku
 
 Heroku (1 time setup)
 ---
