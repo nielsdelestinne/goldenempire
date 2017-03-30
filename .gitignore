@@ -7,3 +7,4 @@ out
 *.iws
 target
 */*.MF
+node_modules

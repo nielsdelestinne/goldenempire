@@ -1,1 +1,18 @@
+plugins {
+    id "com.moowork.node" version "1.1.1"
+}
+
+/**
+ * Hook NPM up with Gradle.
+ * When running Gradle build, the NPM task 'test' will be executed.
+ * Furthermore, the NPM task 'build' will be executed, making the dist folder
+ * which will be copied into the webapp folder of the goldenempire-deploy module
+ */
+task packageUiForWar(type: Copy) {
+  from file('dist') into project(':goldenempire-deploy').file('src/main/webapp')
+}
+
+build.dependsOn(npm_test)
+build.dependsOn(packageUiForWar)
+packageUiForWar.dependsOn(npm_build)
 

@@ -5,8 +5,11 @@ Build and manage your own Gold mining company.
 
 Install
 ---
-
 - run from inside project's root: `gradlew clean build`
+
+Backend (Spring)
+---
+- Start by running `GoldenEmpireApplication.java`
 
 Heroku
 ---
@@ -30,3 +33,14 @@ References:
 
 - reference 1: `https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku`
 - reference 2: `https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku`
+
+Frontend (Angular)
+---
+- start with `ng serve --open` from `app-root` folder
+- read the README.md from the `goldenempire-ui` module for more options
+
+Angular / Angular CLI (1 time setup)
+---
+
+1. Globally install Angular CLI: `npm install -g @angular/cli`
+2. Generate a new Angular project with CLI `ng new app-root`

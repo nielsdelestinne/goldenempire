@@ -32,3 +32,9 @@ dependencies {
     compile "mysql:mysql-connector-java"
     compile "org.postgresql:postgresql"
 }
+
+/**
+ * Before creating the war (gradle phase: war),
+ * build the ui so that it can be included in the war
+ */
+war.dependsOn(":goldenempire-ui:build")
