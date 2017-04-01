@@ -12,8 +12,12 @@ task packageUiForWar(type: Copy) {
   from file('dist') into project(':goldenempire-deploy').file('src/main/webapp')
 }
 
+task ngBuild(type: NpmTask) {
+  args = ['run', 'build']
+}
+
 build.dependsOn(npmInstall)
 //build.dependsOn(npm_test)
 build.dependsOn(packageUiForWar)
-packageUiForWar.dependsOn(npm_build)
+packageUiForWar.dependsOn(ngBuild)
 

@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "app-root"
+    "name": "goldenempire-ui"
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
+      "root": "src/",
+      "outDir": "dist/",
       "assets": [
         "assets",
         "favicon.ico"
