@@ -18,13 +18,16 @@ public class User {
 
     private String username;
     private String email;
+    public String password;
 
     private User() {
     }
 
-    private User(String username, String email) {
+    private User(long id, String username, String email, String password) {
+        this.id = id;
         this.username = username;
         this.email = email;
+        this.password = password;
     }
 
     public long getId() {
@@ -39,17 +42,23 @@ public class User {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public static class UserBuilder {
 
         private String username;
         private String email;
+        private String password;
+        private long id;
 
         public static UserBuilder user() {
             return new UserBuilder();
         }
 
         public User build() {
-            return new User(username, email);
+            return new User(id, username, email, password);
         }
 
         public UserBuilder withUsername(String username) {
@@ -59,6 +68,16 @@ public class User {
 
         public UserBuilder withEmail(String email) {
             this.email = email;
+            return this;
+        }
+
+        public UserBuilder withPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder withId(long id) {
+            this.id = id;
             return this;
         }
     }

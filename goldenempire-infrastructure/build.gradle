@@ -1,1 +1,21 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.postgresql:postgresql"
+}
 
+/**
+ * We generate a jar for the classes in our test-folder,
+ * so other projects can depend on these classes.
+ */
+task testJar(type: Jar) {
+    classifier 'test'
+    from sourceSets.test.output
+}
+
+configurations {
+    tests
+}
+
+artifacts {
+    tests testJar
+}

@@ -1,13 +1,9 @@
 package be.nielsdelestinne.goldenempire.api.user;
 
-import be.nielsdelestinne.goldenempire.domain.user.User;
 import be.nielsdelestinne.goldenempire.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Niels Delestinne: www.nielsdelestinne.be
@@ -16,15 +12,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = UserResource.USER_BASE_URL)
 public class UserResource {
 
-    static final String USER_BASE_URL = "/api/user";
+    static final String USER_BASE_URL = "/api/users";
+
+    private final UserService userService;
+    private final UserMapper userMapper;
 
     @Autowired
-    private UserService userService;
+    public UserResource(UserService userService, UserMapper userMapper) {
+        this.userService = userService;
+        this.userMapper = userMapper;
+    }
 
-    @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public UserDto getUser(@PathVariable long userId) {
-        User user = userService.getUser(userId);
-        return new UserDto(user);
+    @RequestMapping(
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public UserDto create(@RequestBody UserDto userDto) {
+        return userMapper.map(
+                userService.create(userMapper.map(userDto)));
+    }
+
+    @RequestMapping(
+            value = "/{id}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public UserDto get(@PathVariable long id) {
+        return userMapper.map(userService.get(id));
     }
 
 }

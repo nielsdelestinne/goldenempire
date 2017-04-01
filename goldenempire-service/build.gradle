@@ -1,4 +1,9 @@
 dependencies {
     compile project(":goldenempire-domain")
+    compile project(":goldenempire-infrastructure")
+    testCompile project(path: ':goldenempire-infrastructure', configuration: 'tests')
+    testCompile project(path: ':goldenempire-domain', configuration: 'tests')
+
     compile "org.springframework.boot:spring-boot-starter"
+    compile "javax.validation:validation-api"
 }

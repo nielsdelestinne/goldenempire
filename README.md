@@ -1,4 +1,4 @@
-Gold Empire
+Golden Empire
 ===
 
 Build and manage your own Gold mining company.
