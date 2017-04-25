@@ -16,8 +16,8 @@ task ngBuild(type: NpmTask) {
   args = ['run', '--silent', 'build']
 }
 
-build.dependsOn(npmInstall)
 //build.dependsOn(npm_test)
 build.dependsOn(packageUiForWar)
 packageUiForWar.dependsOn(ngBuild)
+ngBuild.dependsOn(npmInstall)
 
