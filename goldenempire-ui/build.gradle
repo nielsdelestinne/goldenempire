@@ -13,7 +13,7 @@ task packageUiForWar(type: Copy) {
 }
 
 task ngBuild(type: NpmTask) {
-  args = ['run', 'build']
+  args = ['run', '--silent build']
 }
 
 build.dependsOn(npmInstall)
