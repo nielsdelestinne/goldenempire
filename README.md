@@ -20,7 +20,7 @@ Heroku
 - `heroku run bash` to see the files as they are on Heroku
 
 Heroku (1 time setup)
----
+----
 
 1. Install the Heroku CLI, validate with `heroku --version`
 2. Set the default task to build instead of stage: `heroku config:set GRADLE_TASK="clean build -x test"` (excluding the tests, heroku is no pipeline)
