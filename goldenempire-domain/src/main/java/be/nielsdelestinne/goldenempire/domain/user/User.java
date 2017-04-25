@@ -1,7 +1,5 @@
 package be.nielsdelestinne.goldenempire.domain.user;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 
 /**
@@ -21,15 +19,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
+//    @NotNull
     @Column(name = USER_COLUMN_USERNAME, nullable = false, length = 100, unique = true)
     private String username;
 
-    @NotNull
+//    @NotNull
     @Column(name = USER_COLUMN_EMAIL, nullable = false)
     private String email;
 
-    @NotNull
+//    @NotNull
     @Column(name = USER_COLUMN_PASSWORD, nullable = false)
     public String password;
 

@@ -38,7 +38,7 @@ References:
 
 Frontend (Angular)
 ---
-- start with `ng serve --open` from `app-root` folder
+- start with `npm start` from `goldenempire-ui` folder
 - read the README.md from the `goldenempire-ui` module for more options
 
 Angular / Angular CLI (1 time setup)
