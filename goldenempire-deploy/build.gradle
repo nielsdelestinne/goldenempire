@@ -29,6 +29,9 @@ dependencies {
     compile project(":goldenempire-ui")
 
     compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-security"
+    compile "org.springframework.boot:spring-boot-starter-web-services"
+    compile "io.jsonwebtoken:jjwt"
     compile "org.postgresql:postgresql"
 }
 

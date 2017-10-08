@@ -5,7 +5,7 @@ dependencies {
         testCompile project(path: ':goldenempire-domain', configuration: 'tests')
 
         compile "org.springframework.boot:spring-boot-starter-web-services"
-//        compile "org.springframework.boot:spring-boot-starter-security"
+        compile "org.springframework.boot:spring-boot-starter-security"
 
         // REST ASSURED
         compile ('com.jayway.restassured:rest-assured') {

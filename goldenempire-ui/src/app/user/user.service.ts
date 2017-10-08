@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import User from "./user";
-import {Http, Headers} from "@angular/http";
+import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 
 @Injectable()
@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: Http) {}
 
   registerUser(user: User): Promise<User> {
-    return this.http.post(`${UserService.URL_PATH}`, JSON.stringify(user), {headers: UserService.HEADERS})
+    return this.http.post(`${UserService.URL_PATH + 'register'}`, JSON.stringify(user), {headers: UserService.HEADERS})
       .toPromise()
       .then(response => response.json() as User)
       .catch(this.handleError);

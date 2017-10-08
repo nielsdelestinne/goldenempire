@@ -24,6 +24,7 @@ public class UserResource {
     }
 
     @RequestMapping(
+            value = "/register",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

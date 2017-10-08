@@ -6,4 +6,5 @@ include 'goldenempire-domain'
 include 'goldenempire-infrastructure'
 include 'goldenempire-deploy'
 include 'goldenempire-ui'
+include 'goldenempire-security'
 

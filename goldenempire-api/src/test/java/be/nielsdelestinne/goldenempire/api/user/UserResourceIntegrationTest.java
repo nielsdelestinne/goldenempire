@@ -23,11 +23,9 @@ public class UserResourceIntegrationTest extends ApiIntegrationTest {
 
     @Test
     public void create_whenCreateUser_thenReturnCreatedUser() {
-//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         UserDto providedUserDto = UserDto.userDto()
                 .withUsername("Niels007")
                 .withEmail("niels@mail.be")
-//                .withPassword(passwordEncoder.encode("Password"));
                 .withPassword("Password");
 
         UserDto persistedUserDto = given()
@@ -43,10 +41,12 @@ public class UserResourceIntegrationTest extends ApiIntegrationTest {
                 .response()
                 .as(UserDto.class);
 
-        assertThat(persistedUserDto)
-                .isEqualToIgnoringGivenFields(providedUserDto, "id");
-        assertThat(persistedUserDto.id)
-                .isEqualTo(1L);
+        assertThat(persistedUserDto.username).isEqualTo(providedUserDto.username);
+        assertThat(persistedUserDto.email).isEqualTo(providedUserDto.email);
+        assertThat(persistedUserDto.id).isEqualTo(1L);
+
+        assertThat(persistedUserDto.password).isNullOrEmpty();
+        assertThat(persistedUserDto.password).isNotEqualTo(providedUserDto);
     }
 
     /**
